@@ -1,0 +1,11 @@
+{
+  "frontend/src/index.css": "Global styles with industrial instrument-panel theme using OKLCH colors (dark grays with amber accent), custom typography for numeric displays, and calculator-specific component classes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with industrial color palette, custom font stacks (Inter + JetBrains Mono), minimal border radius, and industrial shadow utilities.",
+  "frontend/src/App.tsx": "Main application component with tabbed layout for three calculators (Pressure, Temperature, Flow), header with branding, and footer with attribution.",
+  "frontend/src/features/calculators/calculations.ts": "Pure calculation functions for pressure (P=F/A), temperature conversions (°C/°F/K), and flow rate (Q=V/t) with proper unit conversions.",
+  "frontend/src/features/calculators/validation.ts": "Input validation utilities for numeric fields, positive number checks, and Kelvin lower-bound validation with user-friendly error messages.",
+  "frontend/src/features/calculators/PressureCalculator.tsx": "Pressure calculator component with force/area inputs, unit selectors (N/kN, m²/cm²), real-time validation, and results display in Pa and kPa with proper TypeScript typing for result state.",
+  "frontend/src/features/calculators/TemperatureConverter.tsx": "Temperature converter component supporting °C/°F/K conversions with dynamic formula display, validation, Kelvin absolute zero checks, and proper TypeScript typing for numeric result state.",
+  "frontend/src/features/calculators/FlowCalculator.tsx": "Flow rate calculator component with volume/time inputs, unit selectors (m³/L, s/min), validation, and results in m³/s and L/s with proper TypeScript typing for result state.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks; currently empty as all calculations are client-side."
+}

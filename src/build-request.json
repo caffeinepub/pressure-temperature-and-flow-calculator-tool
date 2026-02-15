@@ -1,0 +1,84 @@
+{
+  "kind": "build_request",
+  "title": "Pressure, Temperature, and Flow Calculator Tool",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a calculator app UI that lets a user calculate (1) Pressure, (2) Temperature conversion, and (3) Flow rate from user inputs, and shows the computed results immediately on the page.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "mojy aik app bna dein jis me pressure level temp aur flow culclation ho"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The home screen clearly presents three calculator sections (or tabs): Pressure, Temperature, Flow.",
+        "Each section contains labeled input fields and a prominent calculated result area.",
+        "All user-facing labels, buttons, and messages are in English."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement the following calculations with unit support and clear formulas displayed in the UI: (A) Pressure: P = F / A with inputs Force and Area and selectable units (Force: N, kN; Area: m², cm²) and output in Pa/kPa. (B) Temperature: conversions between °C, °F, and K. (C) Flow rate: Q = V / t with inputs Volume and Time and selectable units (Volume: m³, L; Time: s, min) and output in m³/s and L/s.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Pressure calculator computes correctly for multiple unit combinations (including proper cm²↔m² and N↔kN conversions).",
+        "Temperature converter correctly converts between all pairs of (°C, °F, K) and prevents invalid Kelvin (< 0 K).",
+        "Flow calculator computes correctly for multiple unit combinations (including L↔m³ and min↔s conversions).",
+        "Each calculator section displays the formula being used in readable form."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add input validation and helpful error states for all calculators (e.g., missing inputs, non-numeric values, zero/negative area or time where not allowed) without crashing the app.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Invalid inputs show an English inline error message near the relevant field(s).",
+        "When inputs are invalid, the result area does not show misleading numbers (e.g., shows “—” or “Fix inputs to calculate”).",
+        "The app remains responsive and does not throw runtime errors during typing."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Define and apply a coherent visual theme for the app (industrial instrument panel style) using Tailwind styling: neutral dark/gray surfaces, high-contrast typography, and a single accent color (not blue/purple) used consistently for primary actions and highlights.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The UI has a consistent color palette, spacing, and typography across all calculator sections.",
+        "Primary interactive elements (e.g., reset buttons, active tab) use one consistent accent color that is not blue or purple.",
+        "Layout works well on mobile and desktop widths."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use React + TypeScript + Tailwind + React Query (no additional frontend frameworks).",
+    "Do not modify any files under frontend/src/components/ui or any other immutable paths specified by the platform."
+  ],
+  "nonGoals": [
+    "Persisting calculations/history to the backend.",
+    "Internet Identity authentication.",
+    "Advanced fluid dynamics (e.g., Bernoulli, pipe friction) unless explicitly requested later."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.25rem;
+        /* Industrial light theme - cool grays with amber accent */
+        --background: 0.96 0.002 240;
+        --foreground: 0.20 0.005 240;
+        --card: 0.98 0.002 240;
+        --card-foreground: 0.20 0.005 240;
+        --popover: 0.98 0.002 240;
+        --popover-foreground: 0.20 0.005 240;
+        --primary: 0.65 0.18 45;
+        --primary-foreground: 0.98 0.002 45;
+        --secondary: 0.88 0.005 240;
+        --secondary-foreground: 0.25 0.005 240;
+        --muted: 0.92 0.005 240;
+        --muted-foreground: 0.50 0.005 240;
+        --accent: 0.65 0.18 45;
+        --accent-foreground: 0.98 0.002 45;
+        --destructive: 0.55 0.22 25;
+        --destructive-foreground: 0.98 0.002 25;
+        --border: 0.85 0.005 240;
+        --input: 0.85 0.005 240;
+        --ring: 0.65 0.18 45;
+        --chart-1: 0.65 0.18 45;
+        --chart-2: 0.60 0.15 200;
+        --chart-3: 0.55 0.20 140;
+        --chart-4: 0.70 0.15 280;
+        --chart-5: 0.60 0.18 320;
+    }
+
+    .dark {
+        /* Industrial dark theme - deep grays with amber accent */
+        --background: 0.18 0.008 240;
+        --foreground: 0.95 0.005 240;
+        --card: 0.22 0.008 240;
+        --card-foreground: 0.95 0.005 240;
+        --popover: 0.20 0.008 240;
+        --popover-foreground: 0.95 0.005 240;
+        --primary: 0.70 0.20 45;
+        --primary-foreground: 0.15 0.008 45;
+        --secondary: 0.28 0.008 240;
+        --secondary-foreground: 0.95 0.005 240;
+        --muted: 0.26 0.008 240;
+        --muted-foreground: 0.60 0.005 240;
+        --accent: 0.70 0.20 45;
+        --accent-foreground: 0.15 0.008 45;
+        --destructive: 0.60 0.24 25;
+        --destructive-foreground: 0.95 0.005 25;
+        --border: 0.30 0.008 240;
+        --input: 0.30 0.008 240;
+        --ring: 0.70 0.20 45;
+        --chart-1: 0.70 0.20 45;
+        --chart-2: 0.65 0.18 200;
+        --chart-3: 0.60 0.22 140;
+        --chart-4: 0.75 0.18 280;
+        --chart-5: 0.65 0.20 320;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "tnum" 1, "ss01" 1;
+    }
+    
+    /* Industrial monospace for numbers */
+    input[type="number"],
+    .numeric-display {
+        font-variant-numeric: tabular-nums;
+        letter-spacing: 0.02em;
+    }
+}
+
+@layer components {
+    .calculator-section {
+        @apply space-y-4;
+    }
+    
+    .result-display {
+        @apply rounded border-2 border-primary/30 bg-card p-4 font-mono text-lg;
+    }
+    
+    .formula-display {
+        @apply rounded bg-muted/50 px-3 py-2 font-mono text-sm text-muted-foreground;
+    }
+}

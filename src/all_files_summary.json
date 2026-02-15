@@ -1,0 +1,20 @@
+{
+  "backend/main.mo": "Empty Motoko actor with no logic implemented.",
+  "feature_evidence.json": "Lists implemented features, related frontend files, components, and test coverage for the calculator app.",
+  "frontend-file-summaries.txt": "Contains prewritten summaries describing frontend styles, config, core components, and calculator modules.",
+  "frontend/index.css": "Defines Tailwind base layers and OKLCH variable-driven dark/light theme for the app.",
+  "frontend/index.html": "Root HTML file that loads the React app through main.tsx.",
+  "frontend/src/App.tsx": "Top-level UI with tabbed navigation for pressure, temperature, and flow calculators, plus header and footer.",
+  "frontend/src/features/calculators/calculations.ts": "Provides pressure, temperature, and flow calculation functions including unit conversions and formula lookup.",
+  "frontend/src/features/calculators/FlowCalculator.tsx": "React component for flow rate calculation with inputs, unit selection, validation, and real‑time results.",
+  "frontend/src/features/calculators/PressureCalculator.tsx": "React component for pressure calculation providing inputs, unit controls, validation, and computed outputs.",
+  "frontend/src/features/calculators/TemperatureConverter.tsx": "React component for temperature conversion with input validation, unit selection, result computation, and error handling.",
+  "frontend/src/features/calculators/validation.ts": "Contains numeric and Kelvin validation utilities plus a helper to parse numeric values.",
+  "frontend/src/hooks/useActor.ts": "Creates and manages a backend actor tied to the current Internet Identity using React Query.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Implements an Internet Identity provider and hook for login, logout, identity loading, and auth state management.",
+  "frontend/src/hooks/useQueries.ts": "Placeholder file for future React Query hooks; currently empty.",
+  "frontend/src/index.css": "Tailwind-based global styles defining light/dark themes, industrial design tokens, and calculator component styling.",
+  "frontend/src/main.tsx": "Application entry point initializing React Query, Internet Identity provider, and rendering the app.",
+  "frontend/tailwind.config.js": "Tailwind configuration with theme extensions, color tokens, fonts, animations, and plugin setup.",
+  "project_state.json": "Defines project metadata, existing feature list, and a pending request for a calculator app handling pressure, temperature, and flow. Includes versioning and UI/theme requirements."
+}

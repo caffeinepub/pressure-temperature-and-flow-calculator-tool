@@ -1,0 +1,132 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Pressure, Temperature, and Flow Calculator Tool (Frontend)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a single-page calculator UI presenting Pressure, Temperature, and Flow sections with immediate on-page results in English.",
+      "acceptanceCriteria": [
+        "The home screen clearly presents three calculator sections (or tabs): Pressure, Temperature, Flow.",
+        "Each section contains labeled input fields and a prominent calculated result area.",
+        "All user-facing labels, buttons, and messages are in English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the main calculator screen UI with three sections (prefer tabs) and wire in the Pressure, Temperature, and Flow calculator components. Use shadcn-ui components (e.g., Tabs, Card, Button) to structure the layout and sections. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/calculators/PressureCalculator.tsx",
+          "operation": "create",
+          "description": "Create the Pressure calculator section component with labeled inputs and an always-visible result area that updates immediately as the user types. Use shadcn-ui form primitives (e.g., Input, Label, Select) for consistent UI. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/calculators/TemperatureConverter.tsx",
+          "operation": "create",
+          "description": "Create the Temperature conversion section component with labeled inputs, unit selection, and an immediate conversion result area. Use shadcn-ui components for inputs/selects and layout. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/calculators/FlowCalculator.tsx",
+          "operation": "create",
+          "description": "Create the Flow rate calculator section component with labeled inputs, unit selection, and an immediate result area. Use shadcn-ui components for inputs/selects and layout. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Ensure the document title and language metadata align with the calculator app and English-only UI (keep language set to 'en')."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement Pressure, Temperature, and Flow calculations with unit support and show readable formulas in each section.",
+      "acceptanceCriteria": [
+        "Pressure calculator computes correctly for multiple unit combinations (including proper cm²↔m² and N↔kN conversions).",
+        "Temperature converter correctly converts between all pairs of (°C, °F, K) and prevents invalid Kelvin (< 0 K).",
+        "Flow calculator computes correctly for multiple unit combinations (including L↔m³ and min↔s conversions).",
+        "Each calculator section displays the formula being used in readable form."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/calculators/calculations.ts",
+          "operation": "create",
+          "description": "Implement pure TypeScript calculation utilities for: Pressure (P = F/A with N/kN and m²/cm² conversions, outputs in Pa and kPa), Temperature conversions between °C/°F/K with Kelvin lower-bound checks, and Flow (Q = V/t with m³/L and s/min conversions, outputs in m³/s and L/s). Keep functions side-effect free for easy UI integration."
+        },
+        {
+          "path": "frontend/src/features/calculators/PressureCalculator.tsx",
+          "operation": "modify",
+          "description": "Wire the Pressure UI inputs to the calculation utilities, including unit selectors (Force: N, kN; Area: m², cm²) and show outputs in Pa and kPa. Display the formula text 'P = F / A' prominently in the section. Use shadcn-ui Select/Input components for unit selection and inputs. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/calculators/TemperatureConverter.tsx",
+          "operation": "modify",
+          "description": "Wire Temperature unit selectors and numeric input to conversion utilities; support conversions between all pairs of °C/°F/K and show a clear formula/help text for the selected conversion (e.g., °F = °C × 9/5 + 32). Use shadcn-ui Select/Input components. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/calculators/FlowCalculator.tsx",
+          "operation": "modify",
+          "description": "Wire Flow inputs to utilities with unit selectors (Volume: m³, L; Time: s, min) and show outputs in m³/s and L/s. Display formula text 'Q = V / t' prominently. Use shadcn-ui Select/Input components. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add robust input validation and inline error states so invalid inputs never produce misleading results or crashes.",
+      "acceptanceCriteria": [
+        "Invalid inputs show an English inline error message near the relevant field(s).",
+        "When inputs are invalid, the result area does not show misleading numbers (e.g., shows “—” or “Fix inputs to calculate”).",
+        "The app remains responsive and does not throw runtime errors during typing."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/features/calculators/validation.ts",
+          "operation": "create",
+          "description": "Create shared validation helpers for numeric parsing and field rules (required fields, numeric checks, disallow zero/negative area and time, and Kelvin lower-bound validation). Return field-level error messages suitable for inline display."
+        },
+        {
+          "path": "frontend/src/features/calculators/PressureCalculator.tsx",
+          "operation": "modify",
+          "description": "Add field-level validation for Force and Area (required, numeric; Area must be > 0). Show inline English errors near fields and ensure the result area shows a non-numeric placeholder message (e.g., 'Fix inputs to calculate') when invalid. Use shadcn-ui components (e.g., Alert or muted text styles) for error presentation. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/calculators/TemperatureConverter.tsx",
+          "operation": "modify",
+          "description": "Add validation for temperature input (required, numeric) and prevent invalid Kelvin results (< 0 K) by showing an inline English error and suppressing misleading results when invalid. Use shadcn-ui components for error styling. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/features/calculators/FlowCalculator.tsx",
+          "operation": "modify",
+          "description": "Add validation for Volume and Time (required, numeric; Time must be > 0). Show inline English errors near fields and suppress results when invalid. Use shadcn-ui components for error styling. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Apply an industrial instrument-panel visual theme with Tailwind: dark/gray surfaces, high-contrast typography, and a consistent non-blue/non-purple accent color; responsive on mobile and desktop.",
+      "acceptanceCriteria": [
+        "The UI has a consistent color palette, spacing, and typography across all calculator sections.",
+        "Primary interactive elements (e.g., reset buttons, active tab) use one consistent accent color that is not blue or purple.",
+        "Layout works well on mobile and desktop widths."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Define the global Tailwind base/styles for an industrial instrument-panel look: dark/gray surfaces, high-contrast text, and CSS variables for the theme tokens (including a single non-blue/non-purple accent used for primary/active states). Apply sensible defaults for typography and spacing using Tailwind layers."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust Tailwind theme extensions (if needed) to support the instrument-panel styling and ensure tokens (primary/accent/background/foreground) map cleanly to the CSS variables used in the app theme."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Apply responsive layout and consistent styling across sections (e.g., container widths, spacing, cards/panels, and a consistent non-blue/non-purple accent for active tab and primary actions). Use shadcn-ui layout components (e.g., Card, Tabs, Button) to maintain consistency. Verify the component's usage instructions before implementing."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build an app/tool that calculates pressure level, temperature, and flow based on user inputs.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-calculator-app-ui-that-lets-a-user-calculate-1-pressure-2-temperature-conversion-and-3-flow-rate-from-user-inputs-and-shows-the-computed-results-immediately-on-the-page",
+      "title": "Create a calculator app UI that lets a user calculate (1) Pressure, (2) Temperature conversion, and (3) Flow rate from user inputs, and shows the computed results immediately on the page.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-following-calculations-with-unit-support-and-clear-formulas-displayed-in-the-ui-a-pressure-p-f-a-with-inputs-force-and-area-and-selectable-units-force-n-kn-area-m-cm-and-output-in-pa-kpa-b-temperature-conversions-between-c-f-and-k-c-flow-rate-q-v-t-with-inputs-volume-and-time-and-selectable-units-volume-m-l-time-s-min-and-output-in-m-s-and-l-s",
+      "title": "Implement the following calculations with unit support and clear formulas displayed in the UI: (A) Pressure: P = F / A with inputs Force and Area and selectable units (Force: N, kN; Area: m², cm²) and output in Pa/kPa. (B) Temperature: conversions between °C, °F, and K. (C) Flow rate: Q = V / t with inputs Volume and Time and selectable units (Volume: m³, L; Time: s, min) and output in m³/s and L/s.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-input-validation-and-helpful-error-states-for-all-calculators-e-g-missing-inputs-non-numeric-values-zero-negative-area-or-time-where-not-allowed-without-crashing-the-app",
+      "title": "Add input validation and helpful error states for all calculators (e.g., missing inputs, non-numeric values, zero/negative area or time where not allowed) without crashing the app.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-define-and-apply-a-coherent-visual-theme-for-the-app-industrial-instrument-panel-style-using-tailwind-styling-neutral-dark-gray-surfaces-high-contrast-typography-and-a-single-accent-color-not-blue-purple-used-consistently-for-primary-actions-and-highlights",
+      "title": "Define and apply a coherent visual theme for the app (industrial instrument panel style) using Tailwind styling: neutral dark/gray surfaces, high-contrast typography, and a single accent color (not blue/purple) used consistently for primary actions and highlights.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create an app with user input fields to calculate pressure level, temperature, and flow and display results.",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Pressure, Temperature, and Flow Calculator Tool",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,89 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-calculator-app-ui-that-lets-a-user-calculate-1-pressure-2-temperature-conversion-and-3-flow-rate-from-user-inputs-and-shows-the-computed-results-immediately-on-the-page",
+      "featureTitle": "Create a calculator app UI that lets a user calculate (1) Pressure, (2) Temperature conversion, and (3) Flow rate from user inputs, and shows the computed results immediately on the page.",
+      "files": [
+        "frontend/index.html",
+        "frontend/src/App.tsx",
+        "frontend/src/features/calculators/FlowCalculator.tsx",
+        "frontend/src/features/calculators/PressureCalculator.tsx",
+        "frontend/src/features/calculators/TemperatureConverter.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-following-calculations-with-unit-support-and-clear-formulas-displayed-in-the-ui-a-pressure-p-f-a-with-inputs-force-and-area-and-selectable-units-force-n-kn-area-m-cm-and-output-in-pa-kpa-b-temperature-conversions-between-c-f-and-k-c-flow-rate-q-v-t-with-inputs-volume-and-time-and-selectable-units-volume-m-l-time-s-min-and-output-in-m-s-and-l-s",
+      "featureTitle": "Implement the following calculations with unit support and clear formulas displayed in the UI: (A) Pressure: P = F / A with inputs Force and Area and selectable units (Force: N, kN; Area: m², cm²) and output in Pa/kPa. (B) Temperature: conversions between °C, °F, and K. (C) Flow rate: Q = V / t with inputs Volume and Time and selectable units (Volume: m³, L; Time: s, min) and output in m³/s and L/s.",
+      "files": [
+        "frontend/src/features/calculators/FlowCalculator.tsx",
+        "frontend/src/features/calculators/PressureCalculator.tsx",
+        "frontend/src/features/calculators/TemperatureConverter.tsx",
+        "frontend/src/features/calculators/calculations.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-input-validation-and-helpful-error-states-for-all-calculators-e-g-missing-inputs-non-numeric-values-zero-negative-area-or-time-where-not-allowed-without-crashing-the-app",
+      "featureTitle": "Add input validation and helpful error states for all calculators (e.g., missing inputs, non-numeric values, zero/negative area or time where not allowed) without crashing the app.",
+      "files": [
+        "frontend/src/features/calculators/FlowCalculator.tsx",
+        "frontend/src/features/calculators/PressureCalculator.tsx",
+        "frontend/src/features/calculators/TemperatureConverter.tsx",
+        "frontend/src/features/calculators/validation.ts"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-define-and-apply-a-coherent-visual-theme-for-the-app-industrial-instrument-panel-style-using-tailwind-styling-neutral-dark-gray-surfaces-high-contrast-typography-and-a-single-accent-color-not-blue-purple-used-consistently-for-primary-actions-and-highlights",
+      "featureTitle": "Define and apply a coherent visual theme for the app (industrial instrument panel style) using Tailwind styling: neutral dark/gray surfaces, high-contrast typography, and a single accent color (not blue/purple) used consistently for primary actions and highlights.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
